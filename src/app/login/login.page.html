@@ -1,0 +1,60 @@
+<ion-content [fullscreen]="true" class="h-screen relative">
+  <ion-grid
+    class="h-full overflow-hidden flex flex-col gap-2 box-border p-4 relative z-10"
+  >
+    <ion-row class="h-[40%]">
+      <ion-col
+        size="12"
+        class="flex flex-col gap-4 justify-center items-center h-full"
+      >
+        <ion-img
+          class="object-cover max-w-40 max-h-40"
+          src="../../assets/images/rope-skipping-svgrepo-com (1).svg"
+        ></ion-img>
+        <h1 class="text-2xl font-poppins font-semibold">Log In</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row class="h-[60%] flex flex-col items-center justify-start">
+      <ion-col
+        size="12"
+        class="h-full flex flex-col gap-5 justify-start items-center"
+      >
+        <ion-input
+          label="Usuario"
+          labelPlacement="stacked"
+          fill="outline"
+          placeholder="migueG"
+          color="secondary"
+          class="custom-input"
+          [(ngModel)]="loginData.userName"
+        ></ion-input>
+
+        <ion-input
+          label="Contraseña"
+          fill="outline"
+          placeholder="12345678*"
+          color="secondary"
+          labelPlacement="stacked"
+          class="custom-input border-none bg-transparent"
+          type="password"
+          [(ngModel)]="loginData.password"
+        >
+          <ion-input-password-toggle
+            slot="end"
+            class="bg-transparent"
+          ></ion-input-password-toggle>
+        </ion-input>
+
+
+        <ion-button
+          color="primary"
+          shape="round"
+          class="p-4 w-full"
+          (click)="login()"
+        >
+          <span class="font-semibold text-lg font-poppins">Login</span>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

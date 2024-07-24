@@ -1,0 +1,53 @@
+<div class="ion-page">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Nuevo contacto</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="modal.dismiss()"
+          ><ion-icon name="close-circle-outline"></ion-icon
+        ></ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <div class="h-full w-full flex flex-col px-6 py-4 items-center gap-4">
+      <ion-input
+        label="Nombre de contacto"
+        labelPlacement="floating"
+        [(ngModel)]="inputData.contactName"
+        fill="outline"
+        color="secondary"
+      ></ion-input>
+
+      <ion-input
+        [(ngModel)]="inputData.value"
+        label="Usuario o correo"
+        labelPlacement="floating"
+        fill="outline"
+        color="secondary"
+        debounce="700"
+        (ionInput)="searchUser($event)"
+      ></ion-input>
+      <div>
+        <h4>
+          <span>IMPORTANTE:</span> El contacto debe estar registrado en nuestra
+          plataforma
+        </h4>
+      </div>
+
+      @if(isValid){
+      <ion-card class="flex p-4">
+        <ion-img [src]="urlImage" class="w-[20%]" />
+        <ion-card-header>
+          <ion-card-title> {{ userName }}</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+
+      <ion-button shape="round" color="primary" (click)="addContact()"
+        >Agregar</ion-button
+      >
+      }
+    </div>
+  </ion-content>
+</div>

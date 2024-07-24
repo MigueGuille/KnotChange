@@ -1,0 +1,61 @@
+<ion-content [fullscreen]="true" class="h-screen">
+  <ion-grid class="h-full p-4">
+    <ion-row class="h-[50%]">
+      <ion-col size="12" class="flex flex-col items-center justify-center">
+        <ion-img
+          src="../../assets/images/5911277_2996298.svg"
+          class="object-cover"
+        />
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="h-[30%] flex flex-col items-center justify-center">
+      <ion-col
+        size="12"
+        class="gap-8 flex flex-col items-center justify-center"
+      >
+        <h1
+          class="font-poppins text-3xl tracking-wide font-semibold text-bluePrimary text-center"
+        >
+          Connected by knots
+        </h1>
+
+        <h2
+          class="font-poppins text-sm font-light text-center tracking-wide leading-relaxed"
+        >
+          Connect with your friends, express yourself
+        </h2>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="flex flex-col justify-end h-[20%] grow">
+      <ion-col
+        size="12"
+        class="flex flex-col gap-4 items-center justify-center"
+      >
+        <div class="w-full">
+          <ion-button
+            shape="round"
+            fill="solid"
+            class="w-full shadow-lg backdrop-blur-sm rounded-lg"
+            [routerLink]="['/auth/login']"
+            ><span class="text-white font-poppins">Login</span></ion-button
+          >
+        </div>
+
+        <div class="w-full">
+          <ion-button
+            shape="round"
+            color="dark"
+            fill="clear"
+            class="w-full "
+            [routerLink]="['/tabs']"
+            ><span class="font-poppins font-semibold"
+              >Sign In</span
+            ></ion-button
+          >
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

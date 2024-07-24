@@ -1,0 +1,5 @@
+<ion-list class="bg-transparent shadow-none">
+  @for(chat of chats; track chat.id){
+  <chat-item [chat]="chat" (click)="goToUserChat(chat.idUserReceiver, chat.id)"></chat-item>
+  }
+</ion-list>

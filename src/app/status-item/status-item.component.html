@@ -1,0 +1,19 @@
+<ion-card class="flex items-center">
+  <!-- Contenedor de la Imagen y Rayitas -->
+  <div class="relative w-20 h-20 flex justify-center items-center">
+    <div class="rounded-full w-14 h-14 overflow-hidden flex justify-center items-center z-10 relative">
+      <svg width="56" height="56" viewBox="0 0 100 100" class="absolute top-0 left-0 z-0" style="transform: translate(-50%, -50%); top: 50%; left: 50%;">
+        <circle cx="50" cy="50" r="48" fill="none" stroke="green" stroke-width="4" [attr.stroke-dasharray]="getDashArray()['stroke-dasharray']" [attr.stroke-dashoffset]="getDashArray()['stroke-dashoffset']"/>
+      </svg>
+      <!-- Imagen del contacto -->
+      <ion-img [src]="status.contact.image" class="rounded-full w-full h-full object-cover"/>
+    </div>
+  </div>
+  <!-- Contenedor del Nombre y Tiempo -->
+  <div class="ml-4">
+    <ion-card-header>
+      <ion-card-title>{{ status.contact.name }}</ion-card-title>
+      <ion-card-subtitle>{{ calculateTimeAgo() }}</ion-card-subtitle>
+    </ion-card-header>
+  </div>
+</ion-card>

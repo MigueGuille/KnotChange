@@ -1,0 +1,49 @@
+<ion-header [translucent]="false">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="9" class="flex flex-col items-start justify-center">
+        <ion-title>
+          <span
+            class="text-3xl font-poppins text-dark font-semibold text-start"
+          >
+            Estados
+          </span>
+        </ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <app-status-item
+    (click)="goToNewOrViewStatus()"
+    [status]="myInfoStatus"
+  ></app-status-item>
+
+  <div class="px-4">
+    <h2 class="text-md text-gray-600">Estados de tus contactos</h2>
+  </div>
+  @if(contactStatus.length === 0){
+
+  <ion-grid>
+    <ion-row>
+      <ion-col class="flex flex-col items-center justify-center">
+        <ion-text class="text-center">
+          <h1 class="text-xl font-poppins text-dark font-semibold">
+            No hay estados
+          </h1>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  }@else { @for(contact of contactStatus; track contact.contact.id){
+  <app-status-item [status]="contact"></app-status-item>
+  } }
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button color="secondary" (click)="goToNewStatus()">
+      <ion-icon name="camera-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="goToStatus()"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="px-4 py-2 flex flex-col justify-center items-center">
+    <ion-button
+      (click)="addPhotoToGallery()"
+      shape="round"
+      color="secondary"
+      class="w-full my-4"
+      >{{currentImageWeb ? "Cambiar foto" : "Tomar Foto"}}</ion-button
+    >
+
+    <div
+      *ngIf="currentImageWeb"
+      class="flex flex-col items-center justify-center gap-3"
+    >
+      <img [src]="currentImageWeb" class="max-w-80 max-h-80" />
+
+      <ion-input
+        label="Descripción"
+        label-placement="stacked"
+        fill="outline"
+        placeholder="Enter text"
+        color="secondary"
+        [(ngModel)]="inputDescription"
+      ></ion-input>
+
+      @if(isReady){
+      <ion-button
+        color="success"
+        fill="outline"
+        shape="round"
+        class="w-full"
+        (click)="uploadStatus()"
+      >
+        Agregar estado
+      </ion-button>
+      }
+    </div>
+  </div>
+</ion-content>
